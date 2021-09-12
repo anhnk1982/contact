@@ -1,0 +1,56 @@
+{%extends 'base.html'%} {%load static%}
+<!--  -->
+{%block content%}
+<style>
+    .container {
+        width: 80%;
+        margin: 10px 0;
+        margin: auto;
+        padding: 10px 0;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    ul li {
+        display: inline-block;
+        padding: 0 0.8em 1.3em;
+        width: 30%;
+    }
+    
+    ul li>div {
+        border-top: 0.6px solid #cccccc;
+        border-right: 1.4px solid #cccccc;
+        border-bottom: 1.8px solid #cccccc;
+        border-left: 0.7px solid #cccccc;
+        text-align: center;
+        padding: 4em 2em;
+    }
+    
+    .name {
+        font-size: 40px;
+    }
+    
+    .email {
+        color: #0b6121;
+    }
+</style>
+<div class="container">
+    <ul>
+        {%for contact in contacts%}
+        <li>
+            <div>
+                <h2 class="name">{{contact.name}}</h2>
+                <p>{{contact.relation}}</p>
+                <p>{{contact.phone}}</p>
+                <p class="email">{{contact.email}}</p>
+                <p>{{contact.address}}</p>
+            </div>
+        </li>
+        {%endfor%}
+    </ul>
+
+
+</div>
+{%endblock%}
